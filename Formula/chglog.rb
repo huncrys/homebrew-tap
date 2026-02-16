@@ -21,10 +21,17 @@ class Chglog < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=v#{version}"), "./cmd/chglog"
 
+    pkgshare.install "testdata/gold-init-changelog.yml", "testdata/TestFormatChangelog-deb"
+
     generate_completions_from_executable(bin/"chglog", shell_parameter_format: :cobra)
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/chglog version 2>&1")
+    system bin/"chglog", "format",
+      "-i", pkgshare/"gold-init-changelog.yml",
+      "-o", testpath/"TestFormatChangelog-deb",
+      "-t", "deb",
+      "-p", "TestFormatChangelog-deb"
+    assert_equal (pkgshare/"TestFormatChangelog-deb").read, (testpath/"TestFormatChangelog-deb").read
   end
 end
