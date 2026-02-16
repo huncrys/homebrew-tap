@@ -26,12 +26,6 @@ class GitWarpTime < Formula
   depends_on "rust" => :build
   depends_on "libgit2"
 
-  # Additional dependency
-  # resource "" do
-  #   url ""
-  #   sha256 ""
-  # end
-
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"
 
