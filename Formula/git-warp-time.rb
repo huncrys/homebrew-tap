@@ -5,6 +5,15 @@ class GitWarpTime < Formula
   sha256 "16ad1f6f61199011c9bdcc0e17dc5122f7e1eb2008090e9ca6f9052c9b7117bf"
   license "GPL-3.0-only"
 
+  bottle do
+    root_url "https://ghcr.io/v2/huncrys/tap"
+    sha256 cellar: :any,                 arm64_tahoe:   "d336e1eae5701a42e3a91144786fb01562cd2effa809e47d7bdf62b81760808e"
+    sha256 cellar: :any,                 arm64_sequoia: "94c8749f3ba644f6edaf677bc7e173d3622a29140bfc57ae2e861865c882a789"
+    sha256 cellar: :any,                 arm64_sonoma:  "37b89bd458a9a67f65a05abd7017d38cea81e67a723ac3e2198952daaa545204"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ef0309944e3b226f97bf70dd903f9dfe8f57503a02091577822d164f9d7bd58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f32876f4ab8454be78e73c5033e6a717ec124ea89a030b5e01766265819645dc"
+  end
+
   head do
     url "https://github.com/alerque/git-warp-time.git", branch: "master"
 
