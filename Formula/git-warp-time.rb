@@ -7,11 +7,12 @@ class GitWarpTime < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/huncrys/tap"
-    sha256 cellar: :any,                 arm64_tahoe:   "d336e1eae5701a42e3a91144786fb01562cd2effa809e47d7bdf62b81760808e"
-    sha256 cellar: :any,                 arm64_sequoia: "94c8749f3ba644f6edaf677bc7e173d3622a29140bfc57ae2e861865c882a789"
-    sha256 cellar: :any,                 arm64_sonoma:  "37b89bd458a9a67f65a05abd7017d38cea81e67a723ac3e2198952daaa545204"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ef0309944e3b226f97bf70dd903f9dfe8f57503a02091577822d164f9d7bd58"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f32876f4ab8454be78e73c5033e6a717ec124ea89a030b5e01766265819645dc"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "bed8b02b2a6c73b0ac346689139967d08741c57a30db22bbaf06e67da1bbaed3"
+    sha256 cellar: :any,                 arm64_sequoia: "555325b8a8cf1dd2640c8fabcb5198129316cc6cf12d8a25443b56cd8900d68a"
+    sha256 cellar: :any,                 arm64_sonoma:  "b20265a0aa381ecd8cb90ba5c0f0bfd01c73ae5eac37f5e7ee390f20407be25e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "34ba3e6d180f65da73dc0f0b7e7c7d52da0cb508c72b1fd40e34b14cee15c3a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "852d40d054638db93aef20ef1ccd85ff455a75a2c146c905fa31490586bf7be4"
   end
 
   head do
