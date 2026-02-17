@@ -6,6 +6,15 @@ class Dtop < Formula
   license "MIT"
   head "https://github.com/amir20/dtop.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/huncrys/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "09481ffcd9add3e626a9905110efb4caf05d7ed76ae784ee084b74578b55ba31"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ffaa98566e9531db46c3a4747c47ab08f86a48b8eb90c27e870f893acd0283d7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fa6122aca5df46793244fdb43cdd02a2f97e3458815a3ad5d5f1376b1d666987"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe001a8801bf1cdf93a620bbaf8b4c81fe829f82ba3f6d335ed01f41c187378a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84a9c558fadce335ab783d58c31807eb97ca5308fa52abf0f4f7aa7beaaa975f"
+  end
+
   depends_on "rust" => :build
 
   def install
