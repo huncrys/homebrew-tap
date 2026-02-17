@@ -5,6 +5,11 @@ class GitWarpTime < Formula
   sha256 "16ad1f6f61199011c9bdcc0e17dc5122f7e1eb2008090e9ca6f9052c9b7117bf"
   license "GPL-3.0-only"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/huncrys/tap"
     rebuild 1
