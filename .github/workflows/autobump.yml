@@ -31,9 +31,6 @@ jobs:
     steps:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@main
-        with:
-          core: false
-          cask: false
 
       - name: Configure Git user
         uses: Homebrew/actions/git-user-config@main
