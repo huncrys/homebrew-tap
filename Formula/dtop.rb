@@ -8,11 +8,11 @@ class Dtop < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/huncrys/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "09481ffcd9add3e626a9905110efb4caf05d7ed76ae784ee084b74578b55ba31"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ffaa98566e9531db46c3a4747c47ab08f86a48b8eb90c27e870f893acd0283d7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fa6122aca5df46793244fdb43cdd02a2f97e3458815a3ad5d5f1376b1d666987"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe001a8801bf1cdf93a620bbaf8b4c81fe829f82ba3f6d335ed01f41c187378a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84a9c558fadce335ab783d58c31807eb97ca5308fa52abf0f4f7aa7beaaa975f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d8e1a8783308b6b2f1350e30166eb9faf5e013ec9630e4e8989291811b99a42f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "461920204212dc3cd5ad4bb5d7fc4b3586ce778001ba5ec4d2f2600f89f10a68"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "061e6cb19173ea02179b8ff943de255a7aa98fe8229c956a9c50bfafbdc55c26"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "770177b5a2e236866439780d59dc67422af9e5eee7b300393fb98b0490c0b72a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae7936c93b32bb2fee49c6b7a7df7ef55c657a68959691d334c53c8763707301"
   end
 
   depends_on "homebrew/core/rust" => :build
