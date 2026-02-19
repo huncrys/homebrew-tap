@@ -11,6 +11,9 @@ on:
       formulae:
         description: Custom list of formulae to livecheck and bump if outdated
         required: false
+      casks:
+        description: Custom list of casks to livecheck and bump if outdated
+        required: false
   schedule:
     # Every 3 hours from 1 through 23 with an offset of 45 minutes
     - cron: "45 1-23/3 * * *"
@@ -31,23 +34,27 @@ jobs:
     steps:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Configure Git user
         uses: Homebrew/actions/git-user-config@main
         with:
           username: ${{ (github.event_name == 'workflow_dispatch' && github.actor) || 'BrewTestBot' }}
 
-      - name: Bump formulae
-        env:
-          HOMEBREW_TEST_BOT_AUTOBUMP: 1
-          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.TOKEN }}
-          HOMEBREW_GIT_COMMITTER_NAME: BrewTestBot
-          HOMEBREW_GIT_COMMITTER_EMAIL: 1589480+BrewTestBot@users.noreply.github.com
-          FORMULAE: ${{ inputs.formulae }}
+      - name: Get packages to bump
+        id: autobump
         run: |
-          BREW_BUMP=(brew bump --no-fork --open-pr --formulae --bump-synced --tap=huncrys/tap)
-          if [[ -n "${FORMULAE-}" ]]; then
-            xargs -t "${BREW_BUMP[@]}" <<<"${FORMULAE}"
-          else
-            "${BREW_BUMP[@]}"
-          fi
+          formulae=$(brew tap-info huncrys/tap --json | jq -r '.[].formula_names | join(" ")')
+          casks=$(brew tap-info huncrys/tap --json | jq -r '.[].cask_tokens | join(" ")')
+          echo "formulae=$formulae" >> $GITHUB_OUTPUT
+          echo "casks=$casks" >> $GITHUB_OUTPUT
+
+      - name: Bump packages
+        uses: Homebrew/actions/bump-packages@main
+        continue-on-error: true
+        with:
+          token: ${{ secrets.TOKEN }}
+          formulae: ${{ github.event.inputs.formulae || steps.autobump.outputs.formulae }}
+          casks: ${{ github.event.inputs.casks || steps.autobump.outputs.casks }}
+          fork: false
