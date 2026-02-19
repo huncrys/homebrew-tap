@@ -23,14 +23,14 @@ class GitWarpTime < Formula
   head do
     url "https://github.com/alerque/git-warp-time.git", branch: "master"
 
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
+    depends_on "homebrew/core/autoconf" => :build
+    depends_on "homebrew/core/automake" => :build
   end
 
-  depends_on "jq" => :build
-  depends_on "pkgconf" => :build
-  depends_on "rust" => :build
-  depends_on "libgit2"
+  depends_on "homebrew/core/jq" => :build
+  depends_on "homebrew/core/pkgconf" => :build
+  depends_on "homebrew/core/rust" => :build
+  depends_on "homebrew/core/libgit2"
 
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"

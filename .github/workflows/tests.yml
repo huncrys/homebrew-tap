@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+    paths:
+      - .github/workflows/tests.yml
+      - Formula/*.rb
+      - Casks/*.rb
   pull_request:
 
 jobs:

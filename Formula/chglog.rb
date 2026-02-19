@@ -16,7 +16,7 @@ class Chglog < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb65493088a036cfb90345cfcf410ee6e2de04e5b5aebb7fb3b6333184d8252c"
   end
 
-  depends_on "go" => :build
+  depends_on "homebrew/core/go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=v#{version}"), "./cmd/chglog"

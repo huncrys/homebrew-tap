@@ -35,7 +35,8 @@ jobs:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@main
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          core: false
+          cask: false
 
       - name: Configure Git user
         uses: Homebrew/actions/git-user-config@main
@@ -47,8 +48,8 @@ jobs:
         run: |
           formulae=$(brew tap-info huncrys/tap --json | jq -r '.[].formula_names | join(" ")')
           casks=$(brew tap-info huncrys/tap --json | jq -r '.[].cask_tokens | join(" ")')
-          echo "formulae=$formulae" >> $GITHUB_OUTPUT
-          echo "casks=$casks" >> $GITHUB_OUTPUT
+          echo "formulae=$formulae" >> "$GITHUB_OUTPUT"
+          echo "casks=$casks" >> "$GITHUB_OUTPUT"
 
       - name: Bump packages
         uses: Homebrew/actions/bump-packages@main

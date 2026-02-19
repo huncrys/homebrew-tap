@@ -15,7 +15,7 @@ class Dtop < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "84a9c558fadce335ab783d58c31807eb97ca5308fa52abf0f4f7aa7beaaa975f"
   end
 
-  depends_on "rust" => :build
+  depends_on "homebrew/core/rust" => :build
 
   def install
     system "cargo", "install", "--no-default-features", *std_cargo_args
