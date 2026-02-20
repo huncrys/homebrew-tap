@@ -14,6 +14,13 @@ class Scrollapp < Formula
     end
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/huncrys/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "36cff5b3184c639d28dcf854a93ed4820942afefb83b7d8a63e668146282553d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0dd6e372ee1ff63fcf243c59ee19f75afbd33e90301c591b0ed121d3865c3b28"
+    sha256 cellar: :any_skip_relocation, sequoia:       "8f0f4d861d534e6c767e2ce9371d85b16de5935519fa2f3e50c9a35761aa01f7"
+  end
+
   depends_on xcode: ["16.0", :build] # for xcodebuild
   depends_on macos: :sequoia
   depends_on :macos
