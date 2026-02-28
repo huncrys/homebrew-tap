@@ -7,6 +7,11 @@ class Socktainer < Formula
   license "Apache-2.0"
   head "https://github.com/socktainer/socktainer.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/huncrys/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "605ca46b6e1604a7718d81d4d8c6c3007acc2a33e9334907d85745ffb71bd318"
+  end
+
   depends_on xcode: ["26.0", :build]
   depends_on arch: :arm64
   depends_on "homebrew/core/container"
