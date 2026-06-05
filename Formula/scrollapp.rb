@@ -23,7 +23,6 @@ class Scrollapp < Formula
 
   depends_on xcode: ["16.0", :build] # for xcodebuild
   depends_on macos: :sequoia
-  depends_on :macos
 
   # https://github.com/fromis-9/scrollapp/pull/10
   patch :DATA

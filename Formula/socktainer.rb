@@ -16,7 +16,6 @@ class Socktainer < Formula
   depends_on arch: :arm64
   depends_on "homebrew/core/container"
   depends_on macos: :tahoe
-  depends_on :macos
 
   # https://github.com/socktainer/socktainer/pull/167
   patch :DATA
