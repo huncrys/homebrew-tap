@@ -28,7 +28,8 @@ defaults:
 jobs:
   autobump:
     if: github.repository_owner == 'huncrys'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
+    container: ghcr.io/homebrew/brew:main
     permissions:
       contents: read
     steps:
