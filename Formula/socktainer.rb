@@ -9,7 +9,7 @@ class Socktainer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/huncrys/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "4c5a3068d9265dde899f1767f84abe01c0d60f8693412094e35d83869a3a838e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "347ee8a543c7ad65d3f19b88a78b5511c5001ac71cfc64b0f2a938d2e56a536a"
   end
 
   depends_on xcode: ["26.0", :build]
