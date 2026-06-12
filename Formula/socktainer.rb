@@ -74,7 +74,7 @@ index 5b31af563bb8ffcb9a69655b3411214c22c2df78..8af415a29cbfe6ed81527ebc5267a3d9
 +        let existingVolumes = try await ClientVolume.list()
 +        let existingVolume = existingVolumes.first { $0.name == request.Name }
 +
-+        let result: ContainerResource.Volume
++        let result: ContainerResource.VolumeConfiguration
 +        if let existing = existingVolume {
 +            // Volume exists, use it
 +            result = existing
