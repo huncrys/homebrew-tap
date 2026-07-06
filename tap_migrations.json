@@ -1,3 +1,4 @@
 {
-  "dtop": "homebrew/core"
+  "dtop": "homebrew/core",
+  "socktainer": "homebrew/core"
 }
