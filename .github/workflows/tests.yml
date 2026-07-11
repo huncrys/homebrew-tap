@@ -16,7 +16,6 @@ jobs:
       matrix:
         os:
           - macos-26
-          - macos-15-intel
         include:
           - os: ubuntu-24.04
             container: ghcr.io/homebrew/brew:main
