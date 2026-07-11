@@ -7,6 +7,13 @@ class Glab < Formula
   license "MIT"
   head "https://gitlab.com/gitlab-org/cli.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/huncrys/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "835cdaedc75bb8bedaa4f923be3c3147673a657c18428372e1914ec2738112a3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "27ed73e52c0fca2bd83b68c0b6e8d910aeea2e24d9368b2b3bcd10cc6acca57f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b695b8a435ebaa61045f57fa22fc4899c63d738a6be1dc9631225dd3bfa2334a"
+  end
+
   depends_on "go" => :build
 
   # https://oaklab.hu/oaklab/glab-patches
