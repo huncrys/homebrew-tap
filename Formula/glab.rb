@@ -9,9 +9,9 @@ class Glab < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/huncrys/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "66371223dd336ffdd49f080c994e7b6b8b227fd2da3b65afa041ee2aed4287f7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "e865d1e6b40526fe773e2164bc5b529c4d69e7c054951980aaa274816c637976"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ff70ba5076803bbc79767c1af21ecbb9e2c16e58ed5f6bf45fce32925c8f7f25"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "a3cd264e5ed448d0790ab218606268f0ec80d2036db4f0efa6833aa69d23d63c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "565b5a8859a3927da03763214a8b7a636a8a91669e425bb6b030764aec60f038"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "164f83799b2bb06ae0d0642956f61524774ab5533ce719e0f432f97767e42dae"
   end
 
   depends_on "go" => :build
