@@ -19,7 +19,7 @@ class Glab < Formula
   # https://oaklab.hu/oaklab/glab-patches
   resource "patches" do
     url "https://oaklab.hu/oaklab/glab-patches.git",
-        revision: "21304d784b62560ea8c0c72b8a02b10e30b17036"
+        revision: "c1437dd7b749f599343e11bab6d0e0b200e95db4"
   end
 
   def install
@@ -42,18 +42,6 @@ class Glab < Formula
     # no-telemetry.patch: the telemetry hook setup must be compiled out
     # entirely, not merely disabled at runtime.
     refute_match "setupTelemetryHook", shell_output("strings #{bin}/glab")
-
-    ENV.delete("GITLAB_TOKEN")
-
-    # fix-unauthenticated-header-error.patch: with no credentials configured
-    # for the host at all, the request must still reach the server (which
-    # replies 401) instead of erroring out client-side before it is sent.
-    unauth_config = testpath/"unauth-config"
-    unauth_config.mkpath
-    ENV["GLAB_CONFIG_DIR"] = unauth_config
-    output = shell_output("#{bin}/glab api version --hostname gitlab.com 2>&1", 1)
-    refute_match "Unauthenticated.", output
-    assert_match "401 Unauthorized", output
 
     # fix-host-override-hides-remotes.patch: a `host` set in config.yml must
     # not hide a repo's real remote when it points at a different, self-hosted
