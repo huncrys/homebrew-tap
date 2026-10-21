@@ -19,7 +19,7 @@ class Glab < Formula
   # https://oaklab.hu/oaklab/glab-patches
   resource "patches" do
     url "https://oaklab.hu/oaklab/glab-patches.git",
-        revision: "c1437dd7b749f599343e11bab6d0e0b200e95db4"
+        revision: "0ec60b9c3afcab6ff039616367d07648335b9802"
   end
 
   def install
