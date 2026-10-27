@@ -19,7 +19,7 @@ class Glab < Formula
   # https://oaklab.hu/oaklab/glab-patches
   resource "patches" do
     url "https://oaklab.hu/oaklab/glab-patches.git",
-        revision: "0ec60b9c3afcab6ff039616367d07648335b9802"
+        revision: "1d9c3a91fb25c74db1934cd7705cddb926a2089c"
   end
 
   def install
@@ -43,9 +43,10 @@ class Glab < Formula
     # entirely, not merely disabled at runtime.
     refute_match "setupTelemetryHook", shell_output("strings #{bin}/glab")
 
-    # fix-host-override-hides-remotes.patch: a `host` set in config.yml must
-    # not hide a repo's real remote when it points at a different, self-hosted
-    # GitLab instance; only an explicit override (e.g. GITLAB_HOST) should.
+    # A `host` set in config.yml must not hide a repo's real remote when it
+    # points at a different, self-hosted GitLab instance; only an explicit
+    # override (e.g. GITLAB_HOST) should. Fixed upstream in 1.125.0 (was
+    # fix-host-override-hides-remotes.patch); kept as a regression check.
     # Using gitlab.com as the configured default would not exercise the bug,
     # since it is also glinstance's hardcoded default -- use a third host.
     (testpath/"repo").mkpath
