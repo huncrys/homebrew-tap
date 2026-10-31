@@ -53,7 +53,7 @@ jobs:
           echo "casks=$casks" >> "$GITHUB_OUTPUT"
 
       - name: Bump packages
-        uses: Homebrew/actions/bump-packages@eb02c69dbabdb66ff183c614f4ce7ab3c077592c # 2026.10.12.1
+        uses: Homebrew/actions/bump-packages@d482da0e602890d3160aade42e72c8556103bf04 # 2026.10.26.1
         continue-on-error: true
         with:
           token: ${{ secrets.TOKEN }}
