@@ -1,8 +1,8 @@
 class Chglog < Formula
   desc "Changelog management library and tool"
   homepage "https://github.com/goreleaser/chglog"
-  url "https://github.com/goreleaser/chglog/archive/refs/tags/v0.7.5.tar.gz"
-  sha256 "4cdb8ba7f91bba2e21f28958f94dc7d8ed16bcdfd01942714e4f29f6a9de84e6"
+  url "https://github.com/goreleaser/chglog/archive/refs/tags/v0.7.6.tar.gz"
+  sha256 "b24213d168803977a0fdec0600385dfba6131c447b1df93da437101eb024c7b1"
   license "MIT"
   head "https://github.com/goreleaser/chglog.git", branch: "main"
 
