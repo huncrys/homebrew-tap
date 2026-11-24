@@ -8,9 +8,10 @@ class Chglog < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/huncrys/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "c01858e3e98983d1e17daa5810f8e590f4ac2b3fdc4cdeaec053535c5577614f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "7112e943904a85ef5c96d6b7dc1c0f634e04312dc0c4402598b84ea0bf5fdcdf"
-    sha256 cellar: :any,                 x86_64_linux: "e016b553e39bf5de7822750bdd4a40bf018032684064f7eafba6d281d1a218b4"
+    manifest_sha256 "74caf14b06e8b51a2a87ad54cd863c90801feca8fe02d138b62d11abe00eebbf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:  "40765ada97c2ae29760732fe691d9d72b0eeaabfbf5830d346b59db5a24bef49"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "8a17a9f60f31006fafbf2f344fca7b0c2b4a48a29a25343b44382149151941be"
+    sha256 cellar: :any,                 x86_64_linux: "6f40185e9d8514bcffce3d113c83723f513a5940d18dcafd1a19bb42476726d4"
   end
 
   depends_on "homebrew/core/go" => :build
