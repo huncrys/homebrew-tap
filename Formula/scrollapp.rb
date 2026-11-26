@@ -5,8 +5,8 @@ class Scrollapp < Formula
   head "https://github.com/fromis-9/scrollapp.git", branch: "main"
 
   stable do
-    url "https://github.com/fromis-9/scrollapp/archive/refs/tags/v1.2.tar.gz"
-    sha256 "cc2afb9d0b3728e5c33e7656b50ae3b7e7fc99874cb736f22d97ae062ed67128"
+    url "https://github.com/fromis-9/scrollapp/archive/refs/tags/v1.3.tar.gz"
+    sha256 "d38057ec97990d56c8132a7b5404f70f01aeff6a46e7913405bca64def49b077"
 
     patch do
       url "https://github.com/fromis-9/scrollapp/commit/ccb21a47daada11d8cca060adf0df9e7edc01830.patch?full_index=1"
